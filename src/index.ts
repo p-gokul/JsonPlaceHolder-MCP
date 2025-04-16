@@ -93,6 +93,45 @@ server.tool(
   }
 );
 
+// Fetch Posts
+server.tool("get-posts", "Get all post items", {}, async () => {
+  const postsUrl = `${API_URL}/posts`;
+  const postsData = await fetchData<Posts>(postsUrl);
+
+  if (!postsData) {
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Failed to retrieve posts`,
+        },
+      ],
+    };
+  }
+  if (postsData.length === 0) {
+    return {
+      content: [
+        {
+          type: "text",
+          text: `No posts found`,
+        },
+      ],
+    };
+  }
+
+  const formattedposts = postsData.map(formatPost);
+  const postsText = `All posts:\n\n${formattedposts.join("\n")}`;
+
+  return {
+    content: [
+      {
+        type: "text",
+        text: postsText,
+      },
+    ],
+  };
+});
+
 // Start the server
 async function main() {
   const transport = new StdioServerTransport();
