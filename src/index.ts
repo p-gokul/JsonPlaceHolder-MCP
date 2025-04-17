@@ -12,7 +12,13 @@ import {
   GetAlbumsTool,
   GetPhotosOfAlbumTool,
 } from "./tools/Album.tool.js";
-import { GetUsersTool, GetUserTool } from "./tools/User.tool.js";
+import {
+  GetUsersTool,
+  GetUserTool,
+  GetUserAlbumsTool,
+  GetUserPostsTool,
+  GetUserTodosTool,
+} from "./tools/User.tool.js";
 
 // API URL
 export const API_URL = "https://jsonplaceholder.typicode.com/";
@@ -85,6 +91,30 @@ server.tool(
   GetUserTool.description,
   { id: GetUserTool.inputSchema },
   GetUserTool.func
+);
+
+// Fetch User Albums
+server.tool(
+  GetUserAlbumsTool.title,
+  GetUserAlbumsTool.description,
+  { id: GetUserAlbumsTool.inputSchema },
+  GetUserAlbumsTool.func
+);
+
+// Fetch User Todos
+server.tool(
+  GetUserTodosTool.title,
+  GetUserTodosTool.description,
+  { id: GetUserTodosTool.inputSchema },
+  GetUserTodosTool.func
+);
+
+// Fetch User Posts
+server.tool(
+  GetUserPostsTool.title,
+  GetUserPostsTool.description,
+  { id: GetUserPostsTool.inputSchema },
+  GetUserPostsTool.func
 );
 
 // Start the server

@@ -1,6 +1,7 @@
 import { Post, postComment } from "../schemas/Posts.schema.js";
 import { Album, AlbumPhoto } from "../schemas/Albums.schema.js";
 import { User } from "../schemas/Users.schema.js";
+import { UserAlbum, UserTodo, UserPost } from "../schemas/Users.schema.js";
 
 // Format post data
 function formatPost(post: Post): string {
@@ -77,4 +78,42 @@ function formatUser(user: User) {
   ].join("\n");
 }
 
-export { formatPost, formatComment, formatAlbum, formatAlbumPhoto, formatUser };
+function formatUserTodo(todo: UserTodo) {
+  return [
+    `ID: ${todo.id}`,
+    `User ID: ${todo.userId}`,
+    `Title: ${todo.title}`,
+    `Completed: ${todo.completed ? "✅ Yes" : "❌ No"}`,
+    "---",
+  ].join("\n");
+}
+
+function formatUserPost(post: UserPost) {
+  return [
+    `ID: ${post.id}`,
+    `User ID: ${post.userId}`,
+    `Title: ${post.title}`,
+    `Body: ${post.body}`,
+    "---",
+  ].join("\n");
+}
+
+function formatUserAlbum(album: UserAlbum) {
+  return [
+    `ID: ${album.id}`,
+    `User ID: ${album.userId}`,
+    `Title: ${album.title}`,
+    "---",
+  ].join("\n");
+}
+
+export {
+  formatPost,
+  formatComment,
+  formatAlbum,
+  formatAlbumPhoto,
+  formatUser,
+  formatUserAlbum,
+  formatUserPost,
+  formatUserTodo,
+};
