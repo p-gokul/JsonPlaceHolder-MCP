@@ -1,4 +1,5 @@
 import { Post, postComment } from "../schemas/Posts.schema.js";
+import { Album, AlbumPhoto } from "../schemas/Albums.schema.js";
 
 // Format post data
 function formatPost(post: Post): string {
@@ -22,4 +23,26 @@ function formatComment(postComment: postComment) {
   ].join("\n");
 }
 
-export { formatPost, formatComment };
+// Format Albums
+function formatAlbum(album: Album) {
+  return [
+    `UserId: ${album.userId}`,
+    `Id: ${album.id}`,
+    `Title: ${album.title}`,
+    "---",
+  ].join("\n");
+}
+
+// Format Album Photos
+function formatAlbumPhoto(albumPhoto: AlbumPhoto) {
+  return [
+    `AlbumId: ${albumPhoto.albumId}`,
+    `Id: ${albumPhoto.id}`,
+    `Title: ${albumPhoto.title}`,
+    `Url: ${albumPhoto.url}`,
+    `Thumbnail: ${albumPhoto.thumbnailUrl}`,
+    "---",
+  ].join("\n");
+}
+
+export { formatPost, formatComment, formatAlbum, formatAlbumPhoto };

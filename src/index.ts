@@ -7,6 +7,12 @@ import {
   GetPostsTool,
   GetPostCommentsTool,
 } from "./tools/Post.tool.js";
+import {
+  GetAlbumTool,
+  GetAlbumsTool,
+  GetPhotosOfAlbumTool,
+} from "./tools/Album.tool.js";
+
 // API URL
 export const API_URL = "https://jsonplaceholder.typicode.com/";
 
@@ -38,6 +44,30 @@ server.tool(
   GetPostCommentsTool.description,
   { id: GetPostCommentsTool.inputSchema },
   GetPostCommentsTool.func
+);
+
+// Fetch Albums
+server.tool(
+  GetAlbumsTool.title,
+  GetAlbumsTool.description,
+  {},
+  GetAlbumsTool.func
+);
+
+// Fetch Album by Id
+server.tool(
+  GetAlbumTool.title,
+  GetAlbumTool.description,
+  { id: GetAlbumTool.inputSchema },
+  GetAlbumTool.func
+);
+
+// Fetch Album Photos
+server.tool(
+  GetPhotosOfAlbumTool.title,
+  GetPhotosOfAlbumTool.description,
+  { id: GetPhotosOfAlbumTool.inputSchema },
+  GetPhotosOfAlbumTool.func
 );
 
 // Start the server
