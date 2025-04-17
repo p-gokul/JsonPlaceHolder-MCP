@@ -1,5 +1,6 @@
 import { Post, postComment } from "../schemas/Posts.schema.js";
 import { Album, AlbumPhoto } from "../schemas/Albums.schema.js";
+import { User } from "../schemas/Users.schema.js";
 
 // Format post data
 function formatPost(post: Post): string {
@@ -45,4 +46,35 @@ function formatAlbumPhoto(albumPhoto: AlbumPhoto) {
   ].join("\n");
 }
 
-export { formatPost, formatComment, formatAlbum, formatAlbumPhoto };
+// Format User Data
+function formatUser(user: User) {
+  const { id, name, username, email, address, phone, website, company } = user;
+
+  const formattedCompany = [
+    `Name: ${company.name}`,
+    `Catch Phrase: ${company.catchPhrase}`,
+    `BS: ${company.bs}`,
+  ].join("\n  ");
+
+  const formattedAddress = [
+    `Street: ${address.street}`,
+    `Suite: ${address.suite}`,
+    `City: ${address.city}`,
+    `Zipcode: ${address.zipcode}`,
+    `Geo: [Lat: ${address.geo.lat}, Lng: ${address.geo.lng}]`,
+  ].join("\n  ");
+
+  return [
+    `ID: ${id}`,
+    `Name: ${name}`,
+    `Username: ${username}`,
+    `Email: ${email}`,
+    `Phone: ${phone}`,
+    `Website: ${website}`,
+    `Address:\n  ${formattedAddress}`,
+    `Company:\n  ${formattedCompany}`,
+    "---",
+  ].join("\n");
+}
+
+export { formatPost, formatComment, formatAlbum, formatAlbumPhoto, formatUser };
