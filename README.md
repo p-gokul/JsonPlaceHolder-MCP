@@ -36,6 +36,26 @@ This application is built using:
 
 # Usage with Claude Desktop
 
+### Docker
+
+1. ###### Build
+
+```bash
+docker build -t json-place-holder .
+```
+
+2. ###### Add this to claude_desktop_config.json
+
+```bash
+{
+  "mcpServers": {
+    "JsonPlaceHolder Notes Server": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "json-place-holder"]
+    }
+  }
+}
+```
 
 ##### NPX
 
