@@ -57,7 +57,7 @@ const GetPhotosOfAlbumTool = {
     const formattedAlbumPhotos = albumPhotosData.map(formatAlbumPhoto);
 
     const albumPhotosText = `Album Photo Details:\n\n${formattedAlbumPhotos.join(
-      "\n"
+      "\n",
     )}`;
 
     return responseContent(albumPhotosText);

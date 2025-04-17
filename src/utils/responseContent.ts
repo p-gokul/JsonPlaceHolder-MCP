@@ -1,6 +1,6 @@
 // Helper Function:  Response Content
 export const responseContent = (
-  message: string
+  message: string,
 ): { content: { type: "text"; text: string }[] } => {
   return {
     content: [

@@ -68,7 +68,7 @@ const GetUserAlbumsTool = {
     const formattedUserAlbums = userAlbumsData.map(formatUserAlbum);
 
     const userAlbumsText = `All User Albums with user id${id}:\n\n${formattedUserAlbums.join(
-      "\n"
+      "\n",
     )}`;
 
     return responseContent(userAlbumsText);
@@ -92,7 +92,7 @@ const GetUserTodosTool = {
     const formattedUserTodos = userTodosData.map(formatUserTodo);
 
     return responseContent(
-      `All User Todos with user id ${id}:\n\n${formattedUserTodos.join("\n")}`
+      `All User Todos with user id ${id}:\n\n${formattedUserTodos.join("\n")}`,
     );
   },
 };
@@ -114,7 +114,7 @@ const GetUserPostsTool = {
     const formattedUserPosts = userPostsData.map(formatUserPost);
 
     return responseContent(
-      `All User Posts with user id ${id}:\n\n${formattedUserPosts.join("\n")}`
+      `All User Posts with user id ${id}:\n\n${formattedUserPosts.join("\n")}`,
     );
   },
 };

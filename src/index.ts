@@ -34,7 +34,7 @@ server.tool(
   GetPostsTool.title,
   GetPostsTool.description,
   {},
-  GetPostsTool.func
+  GetPostsTool.func,
 );
 
 // Fetch post by ID
@@ -42,7 +42,7 @@ server.tool(
   GetPostTool.title,
   GetPostTool.description,
   { id: GetPostTool.inputSchema },
-  GetPostTool.func
+  GetPostTool.func,
 );
 
 // Fetch comments by Post ID
@@ -50,7 +50,7 @@ server.tool(
   GetPostCommentsTool.title,
   GetPostCommentsTool.description,
   { id: GetPostCommentsTool.inputSchema },
-  GetPostCommentsTool.func
+  GetPostCommentsTool.func,
 );
 
 // Fetch Albums
@@ -58,7 +58,7 @@ server.tool(
   GetAlbumsTool.title,
   GetAlbumsTool.description,
   {},
-  GetAlbumsTool.func
+  GetAlbumsTool.func,
 );
 
 // Fetch Album by Id
@@ -66,7 +66,7 @@ server.tool(
   GetAlbumTool.title,
   GetAlbumTool.description,
   { id: GetAlbumTool.inputSchema },
-  GetAlbumTool.func
+  GetAlbumTool.func,
 );
 
 // Fetch Album Photos
@@ -74,7 +74,7 @@ server.tool(
   GetPhotosOfAlbumTool.title,
   GetPhotosOfAlbumTool.description,
   { id: GetPhotosOfAlbumTool.inputSchema },
-  GetPhotosOfAlbumTool.func
+  GetPhotosOfAlbumTool.func,
 );
 
 // Fetch Users
@@ -82,7 +82,7 @@ server.tool(
   GetUsersTool.title,
   GetUsersTool.description,
   {},
-  GetUsersTool.func
+  GetUsersTool.func,
 );
 
 // Fetch User
@@ -90,7 +90,7 @@ server.tool(
   GetUserTool.title,
   GetUserTool.description,
   { id: GetUserTool.inputSchema },
-  GetUserTool.func
+  GetUserTool.func,
 );
 
 // Fetch User Albums
@@ -98,7 +98,7 @@ server.tool(
   GetUserAlbumsTool.title,
   GetUserAlbumsTool.description,
   { id: GetUserAlbumsTool.inputSchema },
-  GetUserAlbumsTool.func
+  GetUserAlbumsTool.func,
 );
 
 // Fetch User Todos
@@ -106,7 +106,7 @@ server.tool(
   GetUserTodosTool.title,
   GetUserTodosTool.description,
   { id: GetUserTodosTool.inputSchema },
-  GetUserTodosTool.func
+  GetUserTodosTool.func,
 );
 
 // Fetch User Posts
@@ -114,7 +114,7 @@ server.tool(
   GetUserPostsTool.title,
   GetUserPostsTool.description,
   { id: GetUserPostsTool.inputSchema },
-  GetUserPostsTool.func
+  GetUserPostsTool.func,
 );
 
 // Start the server
