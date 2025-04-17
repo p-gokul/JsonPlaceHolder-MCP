@@ -1,4 +1,4 @@
-import { Post, postComment } from "../schemas/Posts.js";
+import { Post, postComment } from "../schemas/Posts.schema.js";
 
 // Format post data
 function formatPost(post: Post): string {

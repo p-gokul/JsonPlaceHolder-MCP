@@ -1,14 +1,9 @@
 import { API_URL } from "../index.js";
-import {
-  Posts,
-  Post,
-  type ID,
-  IdSchema,
-  postComments,
-} from "../schemas/Posts.js";
+import { Posts, Post, postComments } from "../schemas/Posts.schema.js";
 import { fetchData } from "../utils/api.js";
 import { responseContent } from "../utils/responseContent.js";
 import { formatPost, formatComment } from "../utils/formatResponse.js";
+import { IdSchema, type ID } from "../schemas/Common.schema.js";
 
 const GetPostTool = {
   title: "get-post-by-id",

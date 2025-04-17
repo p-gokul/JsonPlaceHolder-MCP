@@ -1,5 +1,3 @@
-import { z } from "zod";
-
 interface Post {
   userId: number;
   id: number;
@@ -19,12 +17,4 @@ interface postComment {
 
 interface postComments extends Array<postComment> {}
 
-const IdSchema = z
-  .number()
-  .int()
-  .positive({ message: "ID must be a positive integer." })
-  .describe("ID of the post to retrieve");
-
-export type ID = z.infer<typeof IdSchema>;
-
-export { Post, Posts, IdSchema, postComment, postComments };
+export { Post, Posts, postComment, postComments };
