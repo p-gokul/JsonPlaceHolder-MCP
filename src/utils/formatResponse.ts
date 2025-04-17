@@ -1,4 +1,4 @@
-import { Post } from "../schemas/Posts.js";
+import { Post, postComment } from "../schemas/Posts.js";
 
 // Format post data
 function formatPost(post: Post): string {
@@ -10,4 +10,16 @@ function formatPost(post: Post): string {
   ].join("\n");
 }
 
-export { formatPost };
+// Format Post Comments
+function formatComment(postComment: postComment) {
+  return [
+    `PostId: ${postComment.postId}`,
+    `ID: ${postComment.id}`,
+    `Name: ${postComment.name}`,
+    `Email: ${postComment.email}`,
+    `Body: ${postComment.body}`,
+    "---",
+  ].join("\n");
+}
+
+export { formatPost, formatComment };

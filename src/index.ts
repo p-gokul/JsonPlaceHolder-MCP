@@ -2,7 +2,11 @@
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { GetPostTool, GetPostsTool } from "./tools/Post.tool.js";
+import {
+  GetPostTool,
+  GetPostsTool,
+  GetPostCommentsTool,
+} from "./tools/Post.tool.js";
 // API URL
 export const API_URL = "https://jsonplaceholder.typicode.com/";
 
@@ -26,6 +30,14 @@ server.tool(
   GetPostTool.description,
   { id: GetPostTool.inputSchema },
   GetPostTool.func
+);
+
+// Fetch comments by Post ID
+server.tool(
+  GetPostCommentsTool.title,
+  GetPostCommentsTool.description,
+  { id: GetPostCommentsTool.inputSchema },
+  GetPostCommentsTool.func
 );
 
 // Start the server

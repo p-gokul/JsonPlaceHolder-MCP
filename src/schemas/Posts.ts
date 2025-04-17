@@ -9,6 +9,16 @@ interface Post {
 
 interface Posts extends Array<Post> {}
 
+interface postComment {
+  postId: number;
+  id: number;
+  name: string;
+  email?: string;
+  body?: string;
+}
+
+interface postComments extends Array<postComment> {}
+
 const IdSchema = z
   .number()
   .int()
@@ -17,4 +27,4 @@ const IdSchema = z
 
 export type ID = z.infer<typeof IdSchema>;
 
-export { Post, Posts, IdSchema };
+export { Post, Posts, IdSchema, postComment, postComments };
